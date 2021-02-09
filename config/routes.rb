@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get '/nyt', to: 'api#nyt'
+  
   post '/google', to: 'api#google'
   post '/login', to: 'login#login'
 
