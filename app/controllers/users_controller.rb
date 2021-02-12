@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authorize_request, except: :create
 
   def create
-    @user = User.new({
+    @user = User.create({
       firstname: params[:firstname],
       lastname: params[:lastname],
       username: params[:username],
