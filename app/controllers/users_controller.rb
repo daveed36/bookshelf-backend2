@@ -10,7 +10,10 @@ class UsersController < ApplicationController
     })
 
     if @user.valid?
-      @user.save
+      payload = {user_id: @user.id}
+      token = encode_token(payload)
+      puts token
+      render json: {user: user, jwt: token}
     Collection.create({ name: "Reading Now", user_id: @user.id })
     Collection.create({ name: "To Read", user_id: @user.id })
     Collection.create({ name: "Favorites", user_id: @user.id })
