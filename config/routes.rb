@@ -14,6 +14,7 @@
 # end
 Rails.application.routes.draw do
   resource :users, only: [:create]
+  root 'welcome#index'
   post '/google', to: 'api#google'
   post "/login", to: "auth#login"
   get "/auto_login", to: "auth#auto_login"
