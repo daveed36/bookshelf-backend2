@@ -18,7 +18,5 @@ Rails.application.routes.draw do
   post '/google', to: 'api#google'
   post "/login", to: "auth#login"
   post "/users", to: "users#create"
-  get "/auto_login", to: "auth#auto_login"
-  get "/user_is_authed", to: "auth#user_is_authed"
 end
 
