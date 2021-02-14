@@ -9,15 +9,15 @@ class UsersController < ApplicationController
       password: params[:password]
     })
 
-    if @user.valid?
-      @user.save
+    # if @user.valid?
+    #   @user.save
     Collection.create({ name: "Reading Now", user_id: @user.id })
     Collection.create({ name: "To Read", user_id: @user.id })
     Collection.create({ name: "Favorites", user_id: @user.id })
-      render json: UserSerializer.new(@user)
-    else
-      render json: { error: @user.errors.full_messages }
-    end
+      # render json: UserSerializer.new(@user)
+  #   else
+  #     render json: { error: @user.errors.full_messages }
+  #   end
   end
 
   def show
@@ -26,9 +26,9 @@ class UsersController < ApplicationController
     render json: UserSerializer.new(@user)
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:username, :password, :firstname, :lastname)
-  end
+  # private
+  #
+  # def user_params
+  #   params.require(:user).permit(:username, :password, :firstname, :lastname)
+  # end
 end
