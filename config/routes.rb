@@ -3,10 +3,10 @@
 
 #   root 'welcome#index'
 
-  
+
 #   post '/google', to: 'api#google'
 #   post '/login', to: 'login#login'
- 
+
 
 #   resources :users, only: [:create, :show]
 #   resources :collections, only: [:create]
@@ -15,8 +15,8 @@
 Rails.application.routes.draw do
   resource :users, only: [:create]
   root 'welcome#index'
+  get '/nyt', to: 'api#nyt'
   post '/google', to: 'api#google'
   post "/login", to: "auth#login"
   post "/users", to: "users#create"
 end
-
