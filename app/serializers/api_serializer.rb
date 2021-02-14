@@ -1,4 +1,4 @@
 class ApiSerializer
   include FastJsonapi::ObjectSerializer
-  # attributes 
+  attributes 
 end
