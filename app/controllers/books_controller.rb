@@ -21,7 +21,7 @@ class BooksController < ApplicationController
     end
   end
 
-  def update 
+  def update
     @book = Book.find(params[:id])
     @book.update({ collection_id: params[:collection_id]})
 
